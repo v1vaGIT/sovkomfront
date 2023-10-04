@@ -1,0 +1,40 @@
+.loginPage__container{
+    background: #FF7D85;
+    background: color(display-p3 0.9634 0.5199 0.5348);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.loginPage__imgContainer{
+    position: absolute;
+    bottom: 54px;
+    right: 0;
+}
+.loginPage__img{
+    object-fit: cover;
+}
+.loginPage__textContainer{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    max-width: 480px;
+    position: absolute;
+    right: 20%;
+    top: 15%;
+}
+.loginPage__title p{
+    color: #FFF;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.loginPage__text p{
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
