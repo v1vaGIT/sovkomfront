@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
 import Store from "./store/store";
+import {BrowserRouter} from "react-router-dom";
 
 interface State {
     store: Store,
@@ -19,7 +20,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Context.Provider value={{
             store
         }}>
-            <App />
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
         </Context.Provider>
     </React.StrictMode>,
 )
