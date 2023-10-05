@@ -4,11 +4,17 @@ import { AuthService } from "../services/AuthService";
 import axios from "axios";
 import { AuthResponse } from "../models/response/AuthResponse";
 import { API_URL } from "../http";
+import {ICourse} from "../models/ICourse.ts";
+import {CoursesListResponse} from "../models/response/CoursesListResponse.ts";
+
+
+import {courseslist} from '../../fakeData/coursesList.js'
 
 export default class Store {
   viewer = {} as IViewer;
-  isAuth = false;
+  isAuth = true;
   isLoading = false;
+  coursesList: null | ICourse[] = null
 
   constructor() {
     makeAutoObservable(this);
@@ -23,6 +29,11 @@ export default class Store {
     this.viewer = viewer;
   }
 
+  setCoursesList(courses: ICourse[]){
+    console.log('courses', courses)
+    this.coursesList = courses;
+  }
+
   setLoading(bool: boolean) {
     this.isLoading = bool;
   }
@@ -34,18 +45,19 @@ export default class Store {
       localStorage.setItem("token", response.data.accessToken);
       this.setAuth(true);
       this.setViewer(response.data.viewer);
-    } catch (e) {
+    } catch (e: any) {
       console.log(e.response?.data?.message);
     }
   }
 
   async logout() {
     try {
-      const response = await AuthService.logout();
+      // const response =
+      await AuthService.logout();
       localStorage.removeItem("token");
       this.setAuth(false);
       this.setViewer({} as IViewer);
-    } catch (e) {
+    } catch (e: any) {
       console.log(e.response?.data?.message);
     }
   }
@@ -59,11 +71,28 @@ export default class Store {
       console.log(response);
       localStorage.setItem("token", response.data.accessToken);
       this.setAuth(true);
-      this.setViewer(response.data.user);
-    } catch (e) {
+      this.setViewer(response.data.viewer);
+    } catch (e: any) {
       console.log(e.response?.data?.message);
     } finally {
       this.setLoading(false);
+    }
+  }
+
+  async fetchAllCourses() {
+    console.log('ищу курсы')
+    this.setLoading(true);
+    try {
+      // const response = await axios.get<CoursesListResponse>(`${API_URL}/courses/get`, {
+      //   withCredentials: true,
+      // });
+      const response = courseslist
+      console.log(response);
+      this.setCoursesList(response.data.courses)
+    } catch (e: any) {
+      console.log(e.response?.data?.message);
+    } finally {
+      this.setLoading(false)
     }
   }
 }
