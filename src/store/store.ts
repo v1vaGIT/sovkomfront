@@ -6,7 +6,7 @@ import { AuthResponse } from "../models/response/AuthResponse";
 import { API_URL } from "../http";
 import {ICourse} from "../models/ICourse.ts";
 import {CoursesListResponse} from "../models/response/CoursesListResponse.ts";
-
+import {CoursesService} from "../services/CoursesService.ts";
 
 import {courseslist} from '../../fakeData/coursesList.js'
 
@@ -83,9 +83,7 @@ export default class Store {
     console.log('ищу курсы')
     this.setLoading(true);
     try {
-      // const response = await axios.get<CoursesListResponse>(`${API_URL}/courses/get`, {
-      //   withCredentials: true,
-      // });
+      // const response = await CoursesService.fetchAllCourses();
       const response = courseslist
       console.log(response);
       this.setCoursesList(response.data.courses)
