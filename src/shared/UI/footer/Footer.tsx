@@ -1,9 +1,8 @@
-import React from 'react';
 import s from './styles.module.css'
 
 const Footer = () => {
     return (
-        <div>
+        <div className={s.fix}>
             Footer
         </div>
     );

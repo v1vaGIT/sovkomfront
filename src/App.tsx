@@ -8,8 +8,9 @@ import Header from "./shared/UI/header/Header.tsx";
 import Footer from "./shared/UI/footer/Footer.tsx";
 import CoursesLayout from "./components/Courses/CoursesLayout/CoursesLayout.tsx";
 // import Hi from "./components/Hi.tsx";
-import CoursesList from "./components/Courses/CoursesList/CoursesList.tsx";
+// import CoursesList from "./components/Courses/CoursesList/CoursesList.tsx";
 import {observer} from "mobx-react-lite";
+import CoursesListPage from "./pages/CoursesListPage/CoursesListPage.tsx";
 
 const App:FC = () =>  {
     const {store} = useContext(Context)
@@ -28,9 +29,9 @@ const App:FC = () =>  {
                     <>
                         <Header/>
                         <Routes>
-                            <Route path="courses/" element={<CoursesLayout/>}>
-                                <Route path=":link/" element={<CoursesList/>}/>
-                            </Route>
+                            {/*<Route path="courses/" element={<CoursesLayout/>}>*/}
+                                <Route path="courses/:link/" element={<CoursesListPage/>}/>
+                            {/*</Route>*/}
                         </Routes>
                     </>
                 ) : (

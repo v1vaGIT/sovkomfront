@@ -1,9 +1,8 @@
-import React from 'react';
 import s from './style.module.css'
 
 const Header = () => {
     return (
-        <div>
+        <div className={s.fix}>
             header
         </div>
     );

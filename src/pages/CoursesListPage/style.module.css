@@ -1,0 +1,16 @@
+.coursesListPage__wrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../../shared/assets/img/CoursesListBG.jpg");
+    opacity: 0.25;
+    z-index: -1;
+}
+.coursesListPage__container{
+    margin: 140px 40px 200px;
+
+}
