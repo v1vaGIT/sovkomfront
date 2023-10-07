@@ -10,6 +10,8 @@ const courseslist = {
       tabLink: "manager",
       description: "Приходи на курс! Это круто!",
       lessonsTotal: 10,
+      completedLessons: 5,
+      isActive: true,
     },
   ],
 };
