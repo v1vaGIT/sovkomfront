@@ -1,18 +1,23 @@
-const courseslist = {
+const myCourseslist = {
   data: [
     {
       id: 12,
       title: "Для манагеров",
-      type: "finite", // enum ('finite', 'infinite')
-      placesLeft: 10,
-      startAt: "2011-10-05T14:48:00.000Z", // ISOString
-      endAt: "2011-10-05T14:48:00.000Z", // ISOString
-      tabLink: "manager",
-      description: "Приходи на курс! Это круто!",
+      type: "infinite", // enum ('finite', 'infinite')
       lessonsTotal: 10,
       completedLessons: 5,
       isActive: true,
     },
+    {
+      id: 14,
+      title: "Для прогеров",
+      type: "finite", // enum ('finite', 'infinite')
+      lessonsTotal: 10,
+      completedLessons: 5,
+      isActive: false,
+      startAt: "2011-10-05T14:48:00.000Z", // ISOString
+      endAt: "2011-10-05T14:48:00.000Z", // ISOString
+    },
   ],
 };
-export { courseslist };
+export { myCourseslist };

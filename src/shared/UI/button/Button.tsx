@@ -4,7 +4,7 @@ export interface IButton {
     title: string,
     className: string,
     onClick: ()=>void,
-    disabled: boolean
+    disabled: boolean,
 }
 
 const Button:FC<IButton> = ({title, ...props}) => {

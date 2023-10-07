@@ -9,12 +9,15 @@ import {ICoursesListResponse} from "../models/response/CoursesListResponse.ts";
 import {CoursesService} from "../services/CoursesService.ts";
 
 import {courseslist} from '../../fakeData/coursesList.js'
+import {myCourseslist} from '../../fakeData/my-courses-list.js'
+import {IMyCourse} from "../models/IMyCourse";
 
 export default class Store {
   viewer = {} as IViewer;
   isAuth = true;
   isLoading = false;
   coursesList: null | ICourse[] = null
+  myCoursesList: null | IMyCourse[] = null
 
   constructor() {
     makeAutoObservable(this);
@@ -32,6 +35,11 @@ export default class Store {
   setCoursesList(courses: ICourse[]){
     console.log('courses', courses)
     this.coursesList = courses;
+  }
+
+  setMyCoursesList(courses: IMyCourse[]){
+    console.log('my', courses)
+    this.myCoursesList = courses
   }
 
   setLoading(bool: boolean) {
@@ -86,6 +94,21 @@ export default class Store {
       const response = courseslist
       console.log(response);
       this.setCoursesList(response.data)
+    } catch (e: any) {
+      console.log(e.response?.data?.message);
+    } finally {
+      this.setLoading(false)
+    }
+  }
+
+  async fetchMyCourses() {
+    console.log('ищу мои курсы')
+    this.setLoading(true);
+    try {
+      // const response = await CoursesService.fetchMyCourses();
+      const response = myCourseslist
+      console.log(response);
+      this.setMyCoursesList(response.data)
     } catch (e: any) {
       console.log(e.response?.data?.message);
     } finally {

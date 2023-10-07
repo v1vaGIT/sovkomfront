@@ -1,0 +1,24 @@
+.myCoursesWrap{
+    margin: 140px 40px 160px;
+}
+.myCourses__activeCourses{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 80px;
+}
+.myCourses__completedCourses{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.completedCourses__title{
+    color: #131313;
+    color: color(display-p3 0.0745 0.0745 0.0745);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 100% */
+    letter-spacing: -0.16px;
+    margin-bottom: 23px;
+}

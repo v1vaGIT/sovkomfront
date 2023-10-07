@@ -23,7 +23,7 @@ const CourseCard:FC<ICourseCard> = (
         if (placesLeft){
             setPlaces(placesLeft - 1)
         }
-        setButtonText('Курс разблокирован')
+        setButtonText('Курс добавлен')
         setIsBtnDisabled(true)
     }
 
@@ -44,9 +44,12 @@ const CourseCard:FC<ICourseCard> = (
                         </div>
                 }
             </div>
-            <div className={s.courseCard__placesLeftContainer}>
-                Осталось {places} мест
-            </div>
+            {
+                placesLeft &&
+                <div className={s.courseCard__placesLeftContainer}>
+                    Осталось мест: {places}
+                </div>
+            }
             <div className={s.courseCard__infoSection}>
                 <Button
                     title={buttonText}
@@ -54,9 +57,12 @@ const CourseCard:FC<ICourseCard> = (
                     onClick={singUpOnCourse}
                     disabled={isBtnDisabled}
                 />
-                <div className={s.courseCard__lessonsStatus}>
-                    {lessonsTotal} уроков
-                </div>
+                {
+                    lessonsTotal &&
+                    <div className={s.courseCard__lessonsStatus}>
+                        {lessonsTotal} уроков
+                    </div>
+                }
             </div>
         </div>
     );

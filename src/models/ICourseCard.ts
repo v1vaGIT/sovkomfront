@@ -5,6 +5,6 @@ export interface ICourseCard {
     placesLeft?: number,
     startAt?: Date,
     endAt?: Date,
-    description: string,
-    lessonsTotal: number,
+    description?: string,
+    lessonsTotal?: number,
 }
