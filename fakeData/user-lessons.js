@@ -26,6 +26,7 @@ const lessons = {
       ],
       order: 1,
       completed: false,
+      status: "checking", // enum: ('not_started, 'checking', 'done')
     },
   ],
 };
