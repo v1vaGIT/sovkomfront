@@ -1,3 +1,5 @@
-export interface CoursesListResponse{
-    courses: []
+import {ICourse} from "../ICourse.ts";
+
+export interface ICoursesListResponse{
+    courses: ICourse[]
 }

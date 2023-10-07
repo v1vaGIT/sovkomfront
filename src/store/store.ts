@@ -5,7 +5,7 @@ import axios from "axios";
 import { AuthResponse } from "../models/response/AuthResponse";
 import { API_URL } from "../http";
 import {ICourse} from "../models/ICourse.ts";
-import {CoursesListResponse} from "../models/response/CoursesListResponse.ts";
+import {ICoursesListResponse} from "../models/response/CoursesListResponse.ts";
 import {CoursesService} from "../services/CoursesService.ts";
 
 import {courseslist} from '../../fakeData/coursesList.js'
@@ -14,7 +14,7 @@ export default class Store {
   viewer = {} as IViewer;
   isAuth = true;
   isLoading = false;
-  coursesList: null | ICourse[] = null
+  coursesList: null | ICoursesListResponse = null
 
   constructor() {
     makeAutoObservable(this);
@@ -29,7 +29,7 @@ export default class Store {
     this.viewer = viewer;
   }
 
-  setCoursesList(courses: ICourse[]){
+  setCoursesList(courses: ICoursesListResponse){
     console.log('courses', courses)
     this.coursesList = courses;
   }
@@ -52,7 +52,6 @@ export default class Store {
 
   async logout() {
     try {
-      // const response =
       await AuthService.logout();
       localStorage.removeItem("token");
       this.setAuth(false);

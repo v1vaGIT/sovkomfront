@@ -5,6 +5,6 @@ export interface ICourse {
     placesLeft: number,
     startAt?: Date,
     endAt?: Date,
-    tabId: number,
+    tabLink: string,
     description: string,
 }

@@ -8,7 +8,7 @@ const courseslist = {
                 placesLeft: 10,
                 startAt: new Date('December 17, 1995 03:24:00'),
                 endAt: new Date('December 19, 1995 03:24:00'),
-                tabId: 1,
+                tabLink: 'managers',
                 description: 'Приходи на курс! Это круто!'
             }
         ]

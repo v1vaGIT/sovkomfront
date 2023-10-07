@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {FC} from 'react';
 import s from './style.module.css'
 
+export interface PageTitleProps {
+    title: string;
+}
 
-// @ts-ignore
-const PageTitle = ({title}) => {
+const PageTitle: FC<PageTitleProps> = ({title, ...props}) => {
     return (
-        <h2 className={s.title}>
+        <h2 {...props}>
             {title}
         </h2>
     );
