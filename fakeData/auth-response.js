@@ -13,3 +13,5 @@ const authResponse = {
     },
   },
 };
+
+export { authResponse };
