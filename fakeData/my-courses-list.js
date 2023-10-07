@@ -7,7 +7,7 @@ const courseslist = {
       placesLeft: 10,
       startAt: "2011-10-05T14:48:00.000Z", // ISOString
       endAt: "2011-10-05T14:48:00.000Z", // ISOString
-      tabId: 1,
+      tabLink: "manager",
       description: "Приходи на курс! Это круто!",
       lessonsTotal: 10,
       completedLessons: 5,
