@@ -14,7 +14,7 @@ export default class Store {
   viewer = {} as IViewer;
   isAuth = true;
   isLoading = false;
-  coursesList: null | ICoursesListResponse = null
+  coursesList: null | ICourse[] = null
 
   constructor() {
     makeAutoObservable(this);
@@ -29,7 +29,7 @@ export default class Store {
     this.viewer = viewer;
   }
 
-  setCoursesList(courses: ICoursesListResponse){
+  setCoursesList(courses: ICourse[]){
     console.log('courses', courses)
     this.coursesList = courses;
   }
@@ -85,7 +85,7 @@ export default class Store {
       // const response = await CoursesService.fetchAllCourses();
       const response = courseslist
       console.log(response);
-      this.setCoursesList(response.data.courses)
+      this.setCoursesList(response.data)
     } catch (e: any) {
       console.log(e.response?.data?.message);
     } finally {

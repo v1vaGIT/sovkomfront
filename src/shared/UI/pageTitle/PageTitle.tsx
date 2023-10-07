@@ -1,8 +1,8 @@
-import React, {FC} from 'react';
-import s from './style.module.css'
+import {FC} from 'react';
 
 export interface PageTitleProps {
     title: string;
+    className: string
 }
 
 const PageTitle: FC<PageTitleProps> = ({title, ...props}) => {

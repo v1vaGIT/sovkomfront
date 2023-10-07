@@ -3,12 +3,12 @@ import {Context} from "../../../main.tsx";
 import {useParams} from "react-router-dom";
 import {observer} from "mobx-react-lite";
 import s from './styles.module.css'
+import {ICourse} from "../../../models/ICourse.ts";
+import CourseCard from "../../../shared/UI/courseCard/CourseCard.tsx";
+
 const CoursesList = () => {
     const {link} = useParams()
-    console.log(link)
     const {store} = useContext(Context)
-    console.log('список', store.coursesList)
-    console.log('список2', store.isAuth)
 
     useEffect(()=>{
         if (!store.coursesList){
@@ -16,19 +16,83 @@ const CoursesList = () => {
         }
     },[])
 
+    // const CoursesCardList = (course: ICourse) => {
+    //     if (link === 'all')
+    //         return (
+    //             <div key={course.id}>
+    //                 <CourseCard
+    //                     title={course.title}
+    //                     type={course.type}
+    //                     placesLeft={course.placesLeft}
+    //                     startAt={course.startAt}
+    //                     endAt={course.endAt}
+    //                     lessonsTotal={course.lessonsTotal}
+    //                     description={course.description}
+    //                 />
+    //             </div>
+    //         )
+    //     if (course.tabLink === link)
+    //         return (
+    //             <div key={course.id}>
+    //                 <CourseCard
+    //                     title={course.title}
+    //                     type={course.type}
+    //                     placesLeft={course.placesLeft}
+    //                     startAt={course.startAt}
+    //                     endAt={course.endAt}
+    //                     lessonsTotal={course.lessonsTotal}
+    //                     description={course.description}
+    //                 />
+    //             </div>
+    //         )
+    // }
+
     return (
-        <div className={s.coursesListContainer}>
+        <>
             {
-                (store.coursesList?.courses && store.coursesList.courses.length > 0) ?
-                    <div>
-                        КУРСЫ ЕСТЬ
+                (store.coursesList && store.coursesList.length > 0) ?
+                    <div className={s.coursesListContainer}>
+                        {
+                            store.coursesList.map((course: ICourse) => {
+                                if (link === 'all')
+                                    return (
+                                        <div key={course.id}>
+                                            <CourseCard
+                                                id={course.id}
+                                                title={course.title}
+                                                type={course.type}
+                                                placesLeft={course.placesLeft}
+                                                startAt={course.startAt}
+                                                endAt={course.endAt}
+                                                lessonsTotal={course.lessonsTotal}
+                                                description={course.description}
+                                            />
+                                        </div>
+                                    )
+                                if (course.tabLink === link)
+                                    return (
+                                        <div key={course.id}>
+                                            <CourseCard
+                                                id={course.id}
+                                                title={course.title}
+                                                type={course.type}
+                                                placesLeft={course.placesLeft}
+                                                startAt={course.startAt}
+                                                endAt={course.endAt}
+                                                lessonsTotal={course.lessonsTotal}
+                                                description={course.description}
+                                            />
+                                        </div>
+                                    )
+                            })
+                        }
                     </div>
                     :
                     <div>
-                        К сожалению курсов в данной категории не найдено
+                        К сожалению курсов не найдено
                     </div>
             }
-        </div>
+        </>
     );
 };
 

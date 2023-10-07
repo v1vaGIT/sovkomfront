@@ -4,7 +4,6 @@ const tabsList = {
       id: 1,
       name: "IT-специалистам",
       link: "it",
-      svg: "/uu.svg",
     },
   ],
 };

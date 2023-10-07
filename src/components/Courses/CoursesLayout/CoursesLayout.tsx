@@ -1,8 +1,6 @@
 import CoursesTabs from "../CoursesTabs/CoursesTabs.tsx";
 import {Outlet} from "react-router-dom";
 import PageTitle from "../../../shared/UI/pageTitle/PageTitle.tsx";
-import CoursesList from "../CoursesList/CoursesList.tsx";
-import React from "react";
 import s from './styles.module.css'
 
 const CoursesLayout = () => {

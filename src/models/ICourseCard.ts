@@ -1,11 +1,10 @@
-export interface ICourse {
+export interface ICourseCard {
     id: number,
     title: string,
     type: string,
     placesLeft?: number,
     startAt?: Date,
     endAt?: Date,
-    tabLink: string,
     description: string,
     lessonsTotal: number,
 }
