@@ -10,6 +10,8 @@ const courseslist = {
       tabId: 1,
       description: "Приходи на курс! Это круто!",
       lessonsTotal: 10,
+      completedLessons: 5,
+      isActive: true,
     },
   ],
 };
