@@ -1,12 +1,17 @@
 import s from './styles.module.css'
 
 import logoFooter from '../../assets/img/logoFooter.svg'
+import {useLocation} from "react-router-dom";
+import clsx from "clsx";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+    const location = useLocation()
+
+    const footerContainer = clsx(s.mainFooter, { [s.mainFooter__login]: location.pathname === '/login/' })
 
     return (
-        <div className={s.mainFooter}>
+        <div className={footerContainer}>
             <div className={s.mainFooter__container}>
                 <div className={s.container__leftContent}>
                     <p className={s.leftContent__license}>

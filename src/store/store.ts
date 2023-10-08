@@ -16,7 +16,7 @@ import { ITabs } from "../models/ITabs";
 
 export default class Store {
   viewer = {} as IViewer;
-  isAuth = true;
+  isAuth = false;
   isLoading = false;
   coursesList: null | ICourse[] = null;
   coursesTabs: null | ITabs[] = null;
@@ -103,8 +103,8 @@ export default class Store {
     console.log("ищу курсы");
     this.setLoading(true);
     try {
-      const response = await CoursesService.fetchAllCourses();
-      //const response = courseslist;
+      // const response = await CoursesService.fetchAllCourses();
+      const response = courseslist;
       console.log(response);
       this.setCoursesList(response.data);
     } catch (e: any) {

@@ -149,6 +149,7 @@
     align-items: flex-start;
     background-color: #FFFFFF;
     border-radius: 30px;
+    box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
 }
 
 .modalMenu__logo {

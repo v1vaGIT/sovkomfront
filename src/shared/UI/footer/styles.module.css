@@ -4,6 +4,10 @@
     width: 100%;
     background: rgba(8, 25, 54, 1);
 }
+.mainFooter__login{
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(6px);
+}
 
 .mainFooter__container {
     max-width: 1300px;
