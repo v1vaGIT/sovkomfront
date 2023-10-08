@@ -1,6 +1,6 @@
 .appWrap{
     position: relative;
     height: fit-content;
-    overflow: hidden;
+    /*overflow: hidden;*/
     min-height: 100vh;
 }

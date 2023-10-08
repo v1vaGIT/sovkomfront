@@ -40,10 +40,10 @@ html {
 }
 
 * {
-    font-family: 'Inter', fallback, sans-serif;
+    font-family: sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: normal;
     color: #000000;
-    transition: all 0.2s ease-in-out;
+    /*transition: all 0.2s ease-in-out;*/
 }
