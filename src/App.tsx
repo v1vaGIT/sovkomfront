@@ -13,6 +13,7 @@ import ProfileLayout from "./components/Profile/ProfileLayout/ProfileLayout";
 import MyCourses from "./pages/Profile/MyCourses/MyCourses";
 import CourseDetailPage from "./pages/Profile/CourseDetailPage/CourseDetailPage.tsx";
 import EventCalendar from "./pages/Profile/Events/EventCalendar";
+import Lesson from "./pages/Profile/Lessons/Lesson";
 
 const App:FC = () =>  {
     const {store} = useContext(Context)
@@ -37,6 +38,7 @@ const App:FC = () =>  {
                             <Route path="profile/" element={<ProfileLayout/>}>
                                 <Route path="my-courses/" element={<MyCourses/>} />
                                 <Route path="my-courses/:id/" element={<CourseDetailPage/>} />
+                                <Route path="my-courses/:id/:id/" element={<Lesson/>}/>
                                 <Route path="events/" element={<EventCalendar/>}/>
                             </Route>
                         </Routes>
