@@ -9,6 +9,16 @@ const LoginPage = () => {
                 <div className={s.loginForm__container}>
                     <LoginForm/>
                 </div>
+                <div className={s.loginPage__imgContainer}>
+                </div>
+                <div className={s.loginPage__textContainer}>
+                    <div className={s.loginPage__title}>
+                        <p>Изучай мир, не выходя из дома!</p>
+                    </div>
+                    <div className={s.loginPage__text}>
+                        <p>Измени свою жизнь с помощью онлайн обучения вместе с Совкомбанк</p>
+                    </div>
+                </div>
             </div>
             {/*<LoginForm/>*/}
             {/*<div className={s.loginPage__imgContainer}>*/}

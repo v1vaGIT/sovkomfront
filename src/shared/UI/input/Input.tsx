@@ -6,7 +6,7 @@ export interface IInput {
     fieldName: string,
     value: string,
     onChange: any,
-    error: any,
+    error?: any,
     type: string,
     placeholder?: string
 }

@@ -10,6 +10,9 @@
     position: absolute;
     bottom: 54px;
     right: 0;
+    background: url("../../shared/assets/img/loginIMG.png");
+    height: 580px;
+    width: 727px;
 }
 .loginPage__img{
     object-fit: cover;
@@ -23,6 +26,11 @@
     position: absolute;
     right: 20%;
     top: 15%;
+}
+@media screen and (max-width: 1367px){
+    .loginPage__textContainer{
+        display: none;
+    }
 }
 .loginPage__title p{
     color: #FFF;
@@ -50,5 +58,6 @@
 .loginForm__container{
     position: absolute;
     left: 155px;
-    top: calc(50% - 285px)
+    top: calc(50% - 285px);
+    z-index: 10;
 }

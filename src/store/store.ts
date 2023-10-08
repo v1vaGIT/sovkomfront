@@ -16,7 +16,7 @@ import {ITabs} from "../models/ITabs";
 
 export default class Store {
   viewer = {} as IViewer;
-  isAuth = true;
+  isAuth = false;
   isLoading = false;
   coursesList: null | ICourse[] = null
   coursesTabs: null | ITabs[] = null
