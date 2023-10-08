@@ -1,7 +1,138 @@
-.fix{
+.mainFooter{
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 125px;
     background: rgba(8, 25, 54, 1);
+}
+
+.mainFooter__container {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 15px 30px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.container__leftContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.leftContent__license {
+    max-width: 445px;
+    width: 100%;
+    font-size: 10px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.leftContent__cookie {
+    margin-top: 10px;
+    max-width: 445px;
+    width: 100%;
+    font-size: 10px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.cookie__policy {
+    font-size: 10px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    opacity: 1;
+}
+
+.cookie__policy:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    opacity: 0.75;
+}
+
+.container__middleContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.middleContent__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.middleContent__info {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.info__phone {
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.info__phone:hover {
+    opacity: 0.75;
+}
+
+.container__rightContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rightContent__logo {
+    width: 48px;
+    height: 48px;
+}
+
+.rightContent__logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rightContent__app {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.app__info {
+    font-size: 14px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.app__link {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    opacity: 1;
+}
+
+.app__link:hover {
+    opacity: 0.75;
+}
+
+.app__link p {
+    font-size: 10px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.app__link svg {
+    margin-left: 5px;
 }

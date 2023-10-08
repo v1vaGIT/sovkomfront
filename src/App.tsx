@@ -1,5 +1,6 @@
 import {FC, useContext, useEffect} from 'react'
-import './App.css'
+import './App.css';
+import './shared/assets/fonts/fonts.css'
 import LoginPage from "./pages/LoginPage/LoginPage";
 import {Route, Routes} from 'react-router-dom'
 import {Context} from "./main.tsx";
