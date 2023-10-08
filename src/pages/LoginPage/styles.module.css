@@ -8,7 +8,7 @@
 }
 .loginPage__imgContainer{
     position: absolute;
-    bottom: 54px;
+    bottom: 0;
     right: 0;
     background: url("../../shared/assets/img/loginIMG.png");
     height: 580px;

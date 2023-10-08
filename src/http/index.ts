@@ -23,13 +23,17 @@ apiInstance.interceptors.response.use(
       error.config &&
       !error.config._isRetry
     ) {
-      console.log('opa')
+      console.log("opa");
       originalRequest._isRetry = true;
       try {
-        console.log('tyt')
-        const response = await axios.post<AuthResponse>(`${API_URL}/auth/refresh-tokens`, {
-          withCredentials: true,
-        });
+        console.log("tyt");
+        const response = await axios.post<AuthResponse>(
+          `${API_URL}/auth/refresh-tokens`,
+          {},
+          {
+            withCredentials: true,
+          },
+        );
         localStorage.setItem("token", response.data.token);
         return apiInstance.request(originalRequest);
       } catch (e) {
