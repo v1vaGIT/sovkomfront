@@ -32,7 +32,18 @@ ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 /* Стили обнулены */
-body{
-  font-family: sans-serif;
+
+html {
   background: #FFFFFF;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+* {
+    font-family: 'Inter', fallback, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    color: #000000;
+    transition: all 0.2s ease-in-out;
 }

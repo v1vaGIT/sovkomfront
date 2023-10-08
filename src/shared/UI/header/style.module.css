@@ -1,7 +1,233 @@
-.fix{
+.mainHeader{
     position: fixed;
-    height: 57px;
     top: 0;
-    width: 100vw;
+    width: 100%;
     background: #003896;
+}
+
+.mainHeader__container {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 15px 10px 15px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container__leftContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.leftContent__logo {
+    width: 180px;
+    height: 20px;
+    opacity: 1;
+}
+
+.leftContent__logo:hover {
+    opacity: 0.75;
+}
+
+.leftContent__logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leftContent__search {
+    position: relative;
+    margin-left: 50px;
+}
+
+.search__input {
+    padding: 10px 36px 10px 10px;
+    width: 295px;
+    height: 30px;
+    font-size: 12px;
+    color: #FFFFFF;
+    border-radius: 100px;
+    background-color: rgba(237, 242, 244, 0.25);
+}
+
+.search__input::placeholder {
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+.search__placeholder {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0);
+    opacity: 1;
+}
+
+.search__placeholder:hover {
+    opacity: 0.75;
+}
+
+.container__rightContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(0,0,0,0);
+    opacity: 1;
+}
+
+.container__rightContent:hover {
+    opacity: 0.75;
+}
+
+.container__rightContent.active {
+    opacity: 0.75;
+}
+
+.container__rightContent.active .rightContent__personal .personal__name svg {
+    transform: rotate(180deg);
+}
+
+.rightContent__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.rightContent__avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rightContent__personal {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.personal__post {
+    font-size: 12px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.personal__name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.personal__name p {
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.personal__name svg {
+    margin-left: 5px;
+    transform: rotate(0deg);
+}
+
+.modalMenu {
+    position: absolute;
+    right: -35px;
+    top: 75px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+}
+
+.modalMenu__logo {
+    position: relative;
+    width: 295px;
+    height: 180px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.modalMenu__logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modalMenu__logo p {
+    display: none;
+    padding: 10px 15px;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #644D00;
+    background-color: #EFE6D0;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.modalMenu__logo p span {
+    font-size: 10px;
+    font-weight: 600;
+    color: #644D00;
+}
+
+.modalMenu__menu {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.modalMenu__menu a {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    opacity: 1;
+}
+
+.modalMenu__menu a:hover {
+    opacity: 0.5;
+}
+
+.modalMenu__menu a:last-child {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #E2E2E2;
+}
+
+.modalMenu__menu a p {
+    margin-left: 15px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.modalMenu__logout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(0,0,0,0);
+    opacity: 1;
+}
+
+.modalMenu__logout:hover {
+    opacity: 0.5;
+}
+
+.modalMenu__logout p {
+    margin-left: 15px;
+    font-size: 18px;
+    font-weight: 500;
 }
