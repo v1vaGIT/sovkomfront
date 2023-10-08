@@ -1,8 +1,5 @@
-import React from 'react';
-import s from './styles.module.css'
 import ProfileHeaderSection from "../../../shared/UI/profileHeaderSection/ProfileHeaderSection";
 const MyCoursesList = () => {
-
 
 
     return (

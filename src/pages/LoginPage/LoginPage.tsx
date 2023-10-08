@@ -1,4 +1,3 @@
-import React from 'react';
 import s from './styles.module.css'
 import LoginForm from "../../components/LoginForm/LoginForm.tsx";
 const LoginPage = () => {

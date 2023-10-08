@@ -1,7 +1,5 @@
-import React, {FC} from 'react';
+import{FC} from 'react';
 import s from './styles.module.css'
-import Button from "../button/Button";
-import { redirect } from "react-router-dom"
 import PageTitle from "../pageTitle/PageTitle";
 
 export interface IProfileHeader{

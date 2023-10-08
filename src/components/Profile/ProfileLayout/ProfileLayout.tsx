@@ -1,4 +1,3 @@
-import React from 'react';
 import s from './styles.module.css'
 import {Outlet} from "react-router-dom";
 const ProfileLayout = () => {

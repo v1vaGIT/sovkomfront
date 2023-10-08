@@ -1,32 +1,27 @@
-import {FC, useState} from 'react';
+import {FC} from 'react';
 import s from './style.module.css'
-import {ICourseCard} from "../../../models/ICourseCard.ts";
 import moment from 'moment'
-import Button from "../button/Button.tsx";
+import Button from "../../../shared/UI/button/Button.tsx";
+import {observer} from "mobx-react-lite";
+import {IMyCourse} from "../../../models/IMyCourse.ts";
+import clsx from "clsx";
 
-
-const CourseCard:FC<ICourseCard> = (
+const MyCourseCard:FC<IMyCourse> = (
     {
+        id,
         title,
-        placesLeft,
         startAt,
         endAt,
         lessonsTotal,
+        isActive
     }
 ) => {
 
-    const [places, setPlaces] = useState(placesLeft)
-    const [buttonText, setButtonText] = useState('Разблокировать курс')
-    const [isBtnDisabled, setIsBtnDisabled] = useState(false)
-
-    const singUpOnCourse = () => {
-        console.log('стараюсь зарегистрировать на курс')
-        if (placesLeft){
-            setPlaces(placesLeft - 1)
-        }
-        setButtonText('Курс добавлен')
-        setIsBtnDisabled(true)
+    const openCourse = (id: number) => {
+        console.log('открываю курс', id)
     }
+
+    const btnStyles = clsx(s.button, { [s.buttonCompleted]: !isActive })
 
     return (
         <div className={s.courseCardContainer}>
@@ -45,21 +40,15 @@ const CourseCard:FC<ICourseCard> = (
                         </div>
                 }
             </div>
-            {
-                placesLeft &&
-                <div className={s.courseCard__placesLeftContainer}>
-                    Осталось мест: {places}
-                </div>
-            }
             <div className={s.courseCard__infoSection}>
                 <Button
-                    title={buttonText}
-                    className={s.button}
-                    onClick={singUpOnCourse}
-                    disabled={isBtnDisabled}
+                    title={isActive ? 'Открыть курс' : 'Завершено'}
+                    className={btnStyles}
+                    onClick={() => {openCourse(id)}}
+                    disabled={!isActive}
                 />
                 {
-                    lessonsTotal &&
+                    isActive &&
                     <div className={s.courseCard__lessonsStatus}>
                         {lessonsTotal} уроков
                     </div>
@@ -69,4 +58,4 @@ const CourseCard:FC<ICourseCard> = (
     );
 };
 
-export default CourseCard;
+export default  observer(MyCourseCard);

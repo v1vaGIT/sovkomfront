@@ -5,7 +5,7 @@ export interface IMyCourse{
     startAt?: Date, // ISOString
     endAt?: Date, // ISOString
     description?: string,
-    lessonsTotal: number,
-    completedLessons: number,
+    lessonsTotal?: number,
+    completedLessons?: number,
     isActive: boolean,
 }

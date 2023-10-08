@@ -4,7 +4,7 @@ import ProfileHeaderSection from "../../shared/UI/profileHeaderSection/ProfileHe
 import {observer} from "mobx-react-lite";
 import {Context} from "../../main";
 import {IMyCourse} from "../../models/IMyCourse";
-import CourseCard from "../../shared/UI/courseCard/CourseCard";
+import MyCourseCard from "../../components/Profile/MyCoursesCard/MyCourseCard.tsx";
 
 const MyCourses = () => {
 
@@ -18,7 +18,7 @@ const MyCourses = () => {
 
     return (
         <div className={s.myCoursesWrap}>
-            <ProfileHeaderSection pageTitle={'Мои курсы'} pageText={'Открыто 3 курса. Незабудьте сдать задания в срок'}/>
+            <ProfileHeaderSection pageTitle={'Мои курсы'} pageText={'Незабудьте сдать задания в срок'}/>
             <div className={s.myCourses__activeCourses}>
                 {
                     (store.myCoursesList && store.myCoursesList?.length > 0) ?
@@ -26,13 +26,14 @@ const MyCourses = () => {
                             if (course.isActive){
                                 return(
                                     <div key={course.id}>
-                                        <CourseCard
+                                        <MyCourseCard
                                             id={course.id}
                                             title={course.title}
                                             type={course.type}
                                             lessonsTotal={course.lessonsTotal}
                                             startAt={course.startAt}
                                             endAt={course.endAt}
+                                            isActive={course.isActive}
                                         />
                                     </div>
                                 )
@@ -52,12 +53,13 @@ const MyCourses = () => {
                             if (!course.isActive){
                                 return(
                                     <div key={course.id}>
-                                        <CourseCard
+                                        <MyCourseCard
                                             id={course.id}
                                             title={course.title}
                                             type={course.type}
                                             startAt={course.startAt}
                                             endAt={course.endAt}
+                                            isActive={course.isActive}
                                         />
                                     </div>
                                 )
