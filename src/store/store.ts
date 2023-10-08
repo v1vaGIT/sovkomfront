@@ -7,17 +7,21 @@ import { API_URL } from "../http";
 import {ICourse} from "../models/ICourse.ts";
 import {ICoursesListResponse} from "../models/response/CoursesListResponse.ts";
 import {CoursesService} from "../services/CoursesService.ts";
-
+import {lessons} from '../../fakeData/user-lessons.js'
 import {courseslist} from '../../fakeData/coursesList.js'
 import {myCourseslist} from '../../fakeData/my-courses-list.js'
+import {tabsList} from '../../fakeData/tab.js'
 import {IMyCourse} from "../models/IMyCourse";
+import {ITabs} from "../models/ITabs";
 
 export default class Store {
   viewer = {} as IViewer;
   isAuth = true;
   isLoading = false;
   coursesList: null | ICourse[] = null
+  coursesTabs: null | ITabs[] = null
   myCoursesList: null | IMyCourse[] = null
+  lessonsList: any = null
 
   constructor() {
     makeAutoObservable(this);
@@ -37,6 +41,11 @@ export default class Store {
     this.coursesList = courses;
   }
 
+  setCoursesTabs(tabs: ITabs[]){
+    console.log('tabs', tabs)
+    this.coursesTabs = tabs
+  }
+
   setMyCoursesList(courses: IMyCourse[]){
     console.log('my', courses)
     this.myCoursesList = courses
@@ -50,7 +59,7 @@ export default class Store {
     try {
       const response = await AuthService.login(email, password);
       console.log(response);
-      localStorage.setItem("token", response.data.accessToken);
+      localStorage.setItem("token", response.data.token);
       this.setAuth(true);
       this.setViewer(response.data.viewer);
     } catch (e: any) {
@@ -72,11 +81,11 @@ export default class Store {
   async checkAuth() {
     this.setLoading(true);
     try {
-      const response = await axios.get<AuthResponse>(`${API_URL}/refresh`, {
+      const response = await axios.post<AuthResponse>(`${API_URL}/auth/refresh-tokens`, {
         withCredentials: true,
       });
-      console.log(response);
-      localStorage.setItem("token", response.data.accessToken);
+      console.log('response', response);
+      localStorage.setItem("token", response.data.token);
       this.setAuth(true);
       this.setViewer(response.data.viewer);
     } catch (e: any) {
@@ -94,6 +103,36 @@ export default class Store {
       const response = courseslist
       console.log(response);
       this.setCoursesList(response.data)
+    } catch (e: any) {
+      console.log(e.response?.data?.message);
+    } finally {
+      this.setLoading(false)
+    }
+  }
+
+  async fetchCourseLessons(id: string){
+    console.log('ищу уроки курса')
+    this.setLoading(true);
+    try {
+      // const response = await CoursesService.fetchCourseLessons(id);
+      const response = lessons
+      console.log(response);
+      this.setCoursesList(response.data)
+    } catch (e: any) {
+      console.log(e.response?.data?.message);
+    } finally {
+      this.setLoading(false)
+    }
+  }
+
+  async fetchCoursesTabs() {
+    console.log('ищу табы')
+    this.setLoading(true);
+    try {
+      // const response = await CoursesService.fetchCoursesTabs();
+      const response = tabsList
+      console.log(response);
+      this.setCoursesTabs(response.data)
     } catch (e: any) {
       console.log(e.response?.data?.message);
     } finally {

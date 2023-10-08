@@ -1,7 +1,7 @@
 import {IViewer} from "../IViewer";
 
 export interface AuthResponse {
-    accessToken: string;
-    refreshToken: string;
+    token: string;
     viewer: IViewer;
+    expiresAt: string;
 }

@@ -5,6 +5,7 @@ import Button from "../../../shared/UI/button/Button.tsx";
 import {observer} from "mobx-react-lite";
 import {IMyCourse} from "../../../models/IMyCourse.ts";
 import clsx from "clsx";
+import {useNavigate} from "react-router-dom";
 
 const MyCourseCard:FC<IMyCourse> = (
     {
@@ -17,7 +18,10 @@ const MyCourseCard:FC<IMyCourse> = (
     }
 ) => {
 
+    const navigate = useNavigate();
+
     const openCourse = (id: number) => {
+        navigate(`${id}/`)
         console.log('открываю курс', id)
     }
 

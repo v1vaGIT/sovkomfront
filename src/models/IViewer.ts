@@ -1,6 +1,6 @@
 export interface IViewer {
   email: string;
-  isActivated: boolean;
+  isActive: boolean;
   id: string;
   role: string;
   lastName: string;

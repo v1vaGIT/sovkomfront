@@ -1,7 +1,7 @@
 import axios from "axios";
 import { AuthResponse } from "../models/response/AuthResponse";
 
-export const API_URL = "http://localhost:2000/";
+export const API_URL = "http://localhost:2000";
 const apiInstance = axios.create({
   withCredentials: true,
   baseURL: API_URL,
@@ -23,12 +23,14 @@ apiInstance.interceptors.response.use(
       error.config &&
       !error.config._isRetry
     ) {
+      console.log('opa')
       originalRequest._isRetry = true;
       try {
-        const response = await axios.get<AuthResponse>(`${API_URL}/refresh`, {
+        console.log('tyt')
+        const response = await axios.post<AuthResponse>(`${API_URL}/auth/refresh-tokens`, {
           withCredentials: true,
         });
-        localStorage.setItem("token", response.data.accessToken);
+        localStorage.setItem("token", response.data.token);
         return apiInstance.request(originalRequest);
       } catch (e) {
         console.log("НЕ АВТОРИЗОВАН");
