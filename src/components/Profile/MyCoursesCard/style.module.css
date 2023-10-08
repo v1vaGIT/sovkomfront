@@ -19,6 +19,7 @@
     border: none;
     padding: 21px 0;
     min-width: 75px;
+    cursor: initial;
 }
 .courseCardContainer{
     display: flex;
