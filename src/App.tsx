@@ -11,6 +11,7 @@ import {observer} from "mobx-react-lite";
 import CoursesList from "./components/Courses/CoursesList/CoursesList.tsx";
 import ProfileLayout from "./components/Profile/ProfileLayout/ProfileLayout";
 import MyCourses from "./pages/Profile/MyCourses/MyCourses";
+import CourseDetailPage from "./pages/Profile/CourseDetailPage/CourseDetailPage.tsx";
 
 const App:FC = () =>  {
     const {store} = useContext(Context)
@@ -33,9 +34,8 @@ const App:FC = () =>  {
                                 <Route path=":link/" element={<CoursesList/>}/>
                             </Route>
                             <Route path="profile/" element={<ProfileLayout/>}>
-                                <Route path="my-courses/" element={<MyCourses/>}>
-
-                                </Route>
+                                <Route path="my-courses/" element={<MyCourses/>} />
+                                <Route path="my-courses/:id/" element={<CourseDetailPage/>} />
                             </Route>
                         </Routes>
                     </>
