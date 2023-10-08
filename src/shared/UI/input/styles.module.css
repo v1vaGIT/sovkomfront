@@ -1,0 +1,53 @@
+.inputFieldContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.inputFieldContainer .fieldName {
+    font-size: 12px;
+    line-height: 13px;
+    font-weight: 600;
+}
+.inputFieldContainer .inputField {
+    border-radius: 8px;
+    background: #F1F2F4;
+    display: flex;
+    height: 52px;
+    padding: 14px 21px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    position: relative;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-bottom: 1px solid #b6b6b6;
+    transition: border-bottom-color 0.2s linear;
+    width: 100%;
+}
+.inputFieldContainer .inputField.inputFieldError {
+    border-color: #ef4634;
+}
+.inputFieldContainer .inputField::placeholder {
+    color: #b6b6b6;
+    font-size: 12px;
+}
+.inputFieldContainer .inputField:focus:not(.inputFieldError) {
+    border-bottom: 1px solid #2e2e2e;
+}
+.inputFieldContainer .error {
+    font-size: 12px;
+    color: #ef4634;
+}
+.pwdToggle{
+    position: absolute;
+    top: 17px;
+    right: 21px;
+    background: none;
+    border: none;
+    z-index: 5;
+    cursor: pointer;
+}
+.inputWrap{
+    position: relative;
+}

@@ -38,3 +38,17 @@
     font-weight: 500;
     line-height: normal;
 }
+.companyLogo{
+    width: 180px;
+    height: 21px;
+    object-fit: cover;
+    position: absolute;
+    top: 32px;
+    left: 155px;
+    background: url("../../shared/assets/img/logo.png");
+}
+.loginForm__container{
+    position: absolute;
+    left: 155px;
+    top: calc(50% - 285px)
+}

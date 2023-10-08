@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import {useContext, useEffect} from 'react';
 import s from './styles.module.css'
 import ProfileHeaderSection from "../../shared/UI/profileHeaderSection/ProfileHeaderSection";
 import {observer} from "mobx-react-lite";

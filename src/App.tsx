@@ -7,11 +7,9 @@ import RedirectToPage from "./shared/UI/redirector/RedirectToPage.tsx";
 import Header from "./shared/UI/header/Header.tsx";
 import Footer from "./shared/UI/footer/Footer.tsx";
 import CoursesLayout from "./components/Courses/CoursesLayout/CoursesLayout.tsx";
-// import Hi from "./components/Hi.tsx";
 import {observer} from "mobx-react-lite";
 import CoursesList from "./components/Courses/CoursesList/CoursesList.tsx";
 import ProfileLayout from "./components/Profile/ProfileLayout/ProfileLayout";
-import MyCoursesList from "./components/Profile/MyCoursesList/MyCoursesList";
 import MyCourses from "./pages/MyCourses/MyCourses";
 
 const App:FC = () =>  {

@@ -2,15 +2,16 @@ import {FC} from 'react';
 
 export interface IButton {
     title: string,
-    className: string,
-    onClick: ()=>void,
+    className?: string,
+    onClick?: ()=>void,
+    type?: 'submit' | 'reset' | 'button' | undefined,
     disabled: boolean,
 }
 
-const Button:FC<IButton> = ({title, ...props}) => {
+const Button:FC<IButton> = ({title, type, ...props}) => {
 
     return (
-        <button {...props}>
+        <button {...props} type={type}>
             {title}
         </button>
     );
