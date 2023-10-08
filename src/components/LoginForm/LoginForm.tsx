@@ -47,7 +47,7 @@ const LoginForm: FC = () => {
                     control={control}
                       rules={{
                           pattern: {
-                              value: /^\s*([а-яА-Яёa-zA-Z]+\s*){1,3}$/,
+                              value: /^\S+@\S+\.\S+$/,
                               message: 'Введите корректное имя'
                           },
                           required: {
