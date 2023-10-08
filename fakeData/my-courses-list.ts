@@ -15,8 +15,8 @@ const myCourseslist = {
       lessonsTotal: 10,
       completedLessons: 5,
       isActive: false,
-      startAt: "2011-10-05T14:48:00.000Z", // ISOString
-      endAt: "2011-10-05T14:48:00.000Z", // ISOString
+      startAt: new Date("2011-10-05T14:48:00.000Z"), // ISOString
+      endAt: new Date("2011-10-05T14:48:00.000Z"), // ISOString
     },
   ],
 };
