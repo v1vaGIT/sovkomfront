@@ -6,7 +6,7 @@
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("../../shared/assets/img/CoursesListBG.jpg");
+    background-image: url("../../../shared/assets/img/CoursesListBG.jpg");
     opacity: 0.25;
     z-index: -1;
 }

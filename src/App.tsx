@@ -10,7 +10,7 @@ import CoursesLayout from "./components/Courses/CoursesLayout/CoursesLayout.tsx"
 import {observer} from "mobx-react-lite";
 import CoursesList from "./components/Courses/CoursesList/CoursesList.tsx";
 import ProfileLayout from "./components/Profile/ProfileLayout/ProfileLayout";
-import MyCourses from "./pages/MyCourses/MyCourses";
+import MyCourses from "./pages/Profile/MyCourses/MyCourses";
 
 const App:FC = () =>  {
     const {store} = useContext(Context)

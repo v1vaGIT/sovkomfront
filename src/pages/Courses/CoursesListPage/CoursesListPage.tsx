@@ -1,5 +1,5 @@
 
-import CoursesList from "../../components/Courses/CoursesList/CoursesList.tsx";
+import CoursesList from "../../../components/Courses/CoursesList/CoursesList.tsx";
 
 const CoursesListPage = () => {
 

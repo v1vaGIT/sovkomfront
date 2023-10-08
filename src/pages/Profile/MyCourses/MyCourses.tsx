@@ -1,10 +1,10 @@
 import {useContext, useEffect} from 'react';
 import s from './styles.module.css'
-import ProfileHeaderSection from "../../shared/UI/profileHeaderSection/ProfileHeaderSection";
+import ProfileHeaderSection from "../../../shared/UI/profileHeaderSection/ProfileHeaderSection.tsx";
 import {observer} from "mobx-react-lite";
-import {Context} from "../../main";
-import {IMyCourse} from "../../models/IMyCourse";
-import MyCourseCard from "../../components/Profile/MyCoursesCard/MyCourseCard.tsx";
+import {Context} from "../../../main.tsx";
+import {IMyCourse} from "../../../models/IMyCourse.ts";
+import MyCourseCard from "../../../components/Profile/MyCoursesCard/MyCourseCard.tsx";
 
 const MyCourses = () => {
 
