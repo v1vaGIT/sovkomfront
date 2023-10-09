@@ -3,7 +3,7 @@ import {FC} from 'react';
 export interface IButton {
     title: string,
     className?: string,
-    onClick?: ()=>void,
+    onClick?: any,
     type?: 'submit' | 'reset' | 'button' | undefined,
     disabled: boolean,
 }

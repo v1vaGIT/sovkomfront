@@ -23,4 +23,9 @@ export class CoursesService{
     static async fetchMyCourses(): Promise<AxiosResponse<IMyCourse[]>> {
         return apiInstance.get(`${BASE_URL}/my`)
     }
+
+    static async signUpOnCourse(id: number): Promise<AxiosResponse> {
+        return apiInstance.post(`${BASE_URL}/sign-up`, {courseId: id})
+    }
+
 }

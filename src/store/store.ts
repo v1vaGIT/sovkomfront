@@ -13,6 +13,7 @@ import { myCourseslist } from "../../fakeData/my-courses-list.js";
 import { tabsList } from "../../fakeData/tab.js";
 import { IMyCourse } from "../models/IMyCourse";
 import { ITabs } from "../models/ITabs";
+import {ILesson} from "../models/ILesson.ts";
 
 export default class Store {
   viewer = {} as IViewer;
@@ -21,7 +22,7 @@ export default class Store {
   coursesList: null | ICourse[] = null;
   coursesTabs: null | ITabs[] = null;
   myCoursesList: null | IMyCourse[] = null;
-  lessonsList: any = null;
+  lessonsList: null | ILesson[] = null;
 
   constructor() {
     makeAutoObservable(this);
@@ -49,6 +50,11 @@ export default class Store {
   setMyCoursesList(courses: IMyCourse[]) {
     console.log("my", courses);
     this.myCoursesList = courses;
+  }
+
+  setLessonsList(lessons: ILesson[]){
+    console.log('уроки')
+    this.lessonsList = lessons
   }
 
   setLoading(bool: boolean) {
@@ -118,10 +124,10 @@ export default class Store {
     console.log("ищу уроки курса");
     this.setLoading(true);
     try {
-      const response = await CoursesService.fetchCourseLessons(id);
-      //const response = lessons;
+      // const response = await CoursesService.fetchCourseLessons(id);
+      const response = lessons;
       console.log(response);
-      //this.setCoursesList(response.data);
+      this.setLessonsList(response.data);
     } catch (e: any) {
       console.log(e.response?.data?.message);
     } finally {
@@ -152,6 +158,20 @@ export default class Store {
       const response = myCourseslist;
       console.log(response);
       this.setMyCoursesList(response.data);
+    } catch (e: any) {
+      console.log(e.response?.data?.message);
+    } finally {
+      this.setLoading(false);
+    }
+  }
+
+  async signUpOnCourse(id: number) {
+    console.log("записываюсь на курс");
+    this.setLoading(true);
+    try {
+      const response = await CoursesService.signUpOnCourse(id);
+      console.log(response);
+      alert('Вы успешно записались на курс.');
     } catch (e: any) {
       console.log(e.response?.data?.message);
     } finally {

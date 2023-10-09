@@ -16,37 +16,6 @@ const CoursesList = () => {
         }
     },[])
 
-    // const CoursesCardList = (course: ICourse) => {
-    //     if (link === 'all')
-    //         return (
-    //             <div key={course.id}>
-    //                 <CourseCard
-    //                     title={course.title}
-    //                     type={course.type}
-    //                     placesLeft={course.placesLeft}
-    //                     startAt={course.startAt}
-    //                     endAt={course.endAt}
-    //                     lessonsTotal={course.lessonsTotal}
-    //                     description={course.description}
-    //                 />
-    //             </div>
-    //         )
-    //     if (course.tabLink === link)
-    //         return (
-    //             <div key={course.id}>
-    //                 <CourseCard
-    //                     title={course.title}
-    //                     type={course.type}
-    //                     placesLeft={course.placesLeft}
-    //                     startAt={course.startAt}
-    //                     endAt={course.endAt}
-    //                     lessonsTotal={course.lessonsTotal}
-    //                     description={course.description}
-    //                 />
-    //             </div>
-    //         )
-    // }
-
     return (
         <>
             {

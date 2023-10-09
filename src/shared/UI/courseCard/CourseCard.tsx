@@ -3,10 +3,12 @@ import s from './style.module.css'
 import {ICourseCard} from "../../../models/ICourseCard.ts";
 import moment from 'moment'
 import Button from "../button/Button.tsx";
+import {store} from "../../../main.tsx";
 
 
 const CourseCard:FC<ICourseCard> = (
     {
+        id,
         title,
         placesLeft,
         startAt,
@@ -19,7 +21,8 @@ const CourseCard:FC<ICourseCard> = (
     const [buttonText, setButtonText] = useState('Разблокировать курс')
     const [isBtnDisabled, setIsBtnDisabled] = useState(false)
 
-    const singUpOnCourse = () => {
+    const singUp = async (id: number) => {
+        await store.signUpOnCourse(id);
         console.log('стараюсь зарегистрировать на курс')
         if (placesLeft){
             setPlaces(placesLeft - 1)
@@ -55,7 +58,7 @@ const CourseCard:FC<ICourseCard> = (
                 <Button
                     title={buttonText}
                     className={s.button}
-                    onClick={singUpOnCourse}
+                    onClick={singUp(id)}
                     disabled={isBtnDisabled}
                 />
                 {
