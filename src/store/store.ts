@@ -118,7 +118,7 @@ export default class Store {
     }
   }
 
-  async fetchCourseLessons(id: string) {
+  async fetchCourseLessons(id: number) {
     console.log("ищу уроки курса");
     this.setLoading(true);
     try {
