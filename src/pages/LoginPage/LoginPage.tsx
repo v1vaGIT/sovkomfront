@@ -1,5 +1,6 @@
 import s from './styles.module.css'
 import LoginForm from "../../components/LoginForm/LoginForm.tsx";
+import {observer} from "mobx-react-lite";
 const LoginPage = () => {
 
     return (
@@ -24,4 +25,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default observer(LoginPage);

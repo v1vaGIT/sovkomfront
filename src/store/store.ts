@@ -13,11 +13,11 @@ import { myCourseslist } from "../../fakeData/my-courses-list.js";
 import { tabsList } from "../../fakeData/tab.js";
 import { IMyCourse } from "../models/IMyCourse";
 import { ITabs } from "../models/ITabs";
-import {ILesson} from "../models/ILesson.ts";
+import { ILesson } from "../models/ILesson.ts";
 
 export default class Store {
   viewer = {} as IViewer;
-  isAuth = true;
+  isAuth = false;
   isLoading = false;
   coursesList: null | ICourse[] = null;
   coursesTabs: null | ITabs[] = null;
@@ -52,9 +52,9 @@ export default class Store {
     this.myCoursesList = courses;
   }
 
-  setLessonsList(lessons: ILesson[]){
-    console.log('уроки')
-    this.lessonsList = lessons
+  setLessonsList(lessons: ILesson[]) {
+    console.log("уроки");
+    this.lessonsList = lessons;
   }
 
   setLoading(bool: boolean) {
@@ -171,7 +171,7 @@ export default class Store {
     try {
       const response = await CoursesService.signUpOnCourse(id);
       console.log(response);
-      alert('Вы успешно записались на курс.');
+      alert("Вы успешно записались на курс.");
     } catch (e: any) {
       console.log(e.response?.data?.message);
     } finally {
