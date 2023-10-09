@@ -3,14 +3,19 @@ import s from './styles.module.css'
 import {Link} from "react-router-dom";
 const Lesson = () => {
     return (
-        <div className={s.lesson__headerWrap}>
+        <>
+            <div className={s.lesson__headerWrap}>
 
-            <Link className={s.lesson__backToCourse} to={'/profile/my-courses/12/'}>Вернуться к списку уроков</Link>
+                <Link className={s.lesson__backToCourse} to={'/profile/my-courses/12/'}>Вернуться к списку уроков</Link>
 
-            <div className={s.lesson__title}>
-                Управление командой
+                <div className={s.lesson__title}>
+                    Управление командой
+                </div>
             </div>
-        </div>
+            <div className={s.lessons__container}>
+                Содержание урока
+            </div>
+        </>
     );
 };
 

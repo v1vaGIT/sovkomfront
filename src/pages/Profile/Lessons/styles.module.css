@@ -29,3 +29,16 @@
     letter-spacing: -0.16px;
     margin-top: 33px;
 }
+.lessons__container{
+    color: #000;
+    color: color(display-p3 0 0 0);
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%; /* 22.05px */
+    letter-spacing: -0.42px;
+    max-width: 895px;
+    height: fit-content;
+    padding-top: 400px;
+    margin: 0 auto;
+}

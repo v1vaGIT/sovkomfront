@@ -12,6 +12,7 @@ const Header = () => {
     const [showPopup, setShowPopup] = useState(false);
 
     const {store} = useContext(Context)
+    const name = `${store.viewer.firstName} ${store.viewer.lastName}`
 
     // const popupRef = useRef(null);
     // const buttonRef = useRef(null);
@@ -50,7 +51,7 @@ const Header = () => {
                     <div className={s.rightContent__personal}>
                         <p className={s.personal__post}>Студент</p>
                         <div className={s.personal__name}>
-                            <p>Евгения Остапова</p>
+                            <p>{name}</p>
                             <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10 13.5L14 7.5L6 7.5L10 13.5Z" fill="white"/>
                             </svg>
