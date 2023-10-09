@@ -1,6 +1,8 @@
 import React from 'react';
 import s from './styles.module.css'
 import {Link} from "react-router-dom";
+import {observer} from "mobx-react-lite";
+
 const Lesson = () => {
     return (
         <>
@@ -19,4 +21,4 @@ const Lesson = () => {
     );
 };
 
-export default Lesson;
+export default observer(Lesson);

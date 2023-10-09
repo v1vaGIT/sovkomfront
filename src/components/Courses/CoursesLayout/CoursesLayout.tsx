@@ -2,6 +2,7 @@ import CoursesTabs from "../CoursesTabs/CoursesTabs.tsx";
 import {Outlet} from "react-router-dom";
 import PageTitle from "../../../shared/UI/pageTitle/PageTitle.tsx";
 import s from './styles.module.css'
+import {observer} from "mobx-react-lite";
 
 const CoursesLayout = () => {
     return (
@@ -16,4 +17,4 @@ const CoursesLayout = () => {
     );
 };
 
-export default CoursesLayout;
+export default observer(CoursesLayout);

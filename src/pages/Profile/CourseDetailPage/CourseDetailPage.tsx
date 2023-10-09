@@ -2,6 +2,8 @@ import React, {useContext, useEffect, useState} from 'react';
 import s from './styles.module.css'
 import {Link, useNavigate, useParams} from "react-router-dom";
 import {Context} from "../../../main";
+import {observer} from "mobx-react-lite";
+
 const CourseDetailPage = () => {
 
     const {store} = useContext(Context)
@@ -32,4 +34,4 @@ const CourseDetailPage = () => {
     );
 };
 
-export default CourseDetailPage;
+export default observer(CourseDetailPage);

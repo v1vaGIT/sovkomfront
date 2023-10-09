@@ -1,4 +1,4 @@
-
+import {observer} from "mobx-react-lite";
 import CoursesList from "../../../components/Courses/CoursesList/CoursesList.tsx";
 
 const CoursesListPage = () => {
@@ -10,4 +10,4 @@ const CoursesListPage = () => {
     );
 };
 
-export default CoursesListPage;
+export default observer(CoursesListPage);

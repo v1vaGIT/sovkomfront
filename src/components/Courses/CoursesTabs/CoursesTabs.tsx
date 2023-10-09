@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import s from './styles.module.css'
 import {ITabs} from "../../../models/ITabs.ts";
 import {coursesTabs} from "../../../utils/consts.ts";
+import {observer} from "mobx-react-lite";
 
 const CoursesTabs = () => {
     const sectionTabs:ITabs[] = coursesTabs //времнная заглушка, табы приходят с сервера
@@ -25,4 +26,4 @@ const CoursesTabs = () => {
     )
 };
 
-export default CoursesTabs;
+export default observer(CoursesTabs);

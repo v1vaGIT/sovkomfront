@@ -4,7 +4,7 @@ import {ICourseCard} from "../../../models/ICourseCard.ts";
 import moment from 'moment'
 import Button from "../button/Button.tsx";
 import {store} from "../../../main.tsx";
-
+import {observer} from "mobx-react-lite";
 
 const CourseCard:FC<ICourseCard> = (
     {
@@ -72,4 +72,4 @@ const CourseCard:FC<ICourseCard> = (
     );
 };
 
-export default CourseCard;
+export default observer(CourseCard);
