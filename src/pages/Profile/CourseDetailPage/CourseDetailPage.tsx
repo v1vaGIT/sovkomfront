@@ -6,7 +6,6 @@ const CourseDetailPage = () => {
 
     const {store} = useContext(Context)
     const {id} = useParams()
-    const navigate = useNavigate()
     const [currentLesson, setCurrentLessons] = useState(null)
     console.log(id)
 
@@ -24,9 +23,10 @@ const CourseDetailPage = () => {
     //useState (номер урока)
 
     return (
-        <div style={{marginTop: '150px'}}>
-            detail
-            <Link to={'14'}>LINK</Link>
+        <div className={s.lessonsList__wrap}>
+            <Link to={'14'} className={s.buttonToLesson}>УРОК 1</Link>
+            <Link to={'14'} className={s.buttonToLesson}>УРОК 1</Link>
+            <Link to={'14'} className={s.buttonToLesson}>УРОК 1</Link>
         </div>
 
     );

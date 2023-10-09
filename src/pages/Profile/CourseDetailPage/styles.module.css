@@ -1,0 +1,20 @@
+.lessonsList__wrap{
+    margin: 140px 40px 40px;
+}
+.buttonToLesson{
+    border-radius: 6px;
+    background: #F7F7F7;
+    box-shadow: 0px 2px 10px 0px #EAECEE;
+    display: flex;
+    padding: 0 12px;
+    align-items: flex-start;
+    gap: 10px;
+    border: 1px solid #000;
+    color: #131313;
+    color: color(display-p3 0.0745 0.0745 0.0745);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px; /* 300% */
+    margin-bottom: 10px;
+}
