@@ -3,6 +3,7 @@
     top: 0;
     width: 100%;
     background: #003896;
+    z-index: 5;
 }
 
 .mainHeader__container {

@@ -41,6 +41,7 @@ const App:FC = () =>  {
                                 <Route path="my-courses/:id/:id/" element={<Lesson/>}/>
                                 <Route path="events/" element={<EventCalendar/>}/>
                             </Route>
+                            <Route path='*' element={<RedirectToPage link={"courses/all/"} />}/>
                         </Routes>
                     </>
                 ) : (

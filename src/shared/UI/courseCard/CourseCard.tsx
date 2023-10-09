@@ -58,7 +58,7 @@ const CourseCard:FC<ICourseCard> = (
                 <Button
                     title={buttonText}
                     className={s.button}
-                    onClick={singUp(id)}
+                    onClick={()=>{console.log('click')}}
                     disabled={isBtnDisabled}
                 />
                 {

@@ -58,23 +58,6 @@ const LoginForm: FC = () => {
                 </div>
             </form>
         </div>
-        // <div>
-        //     <input
-        //         onChange={e => setEmail(e.target.value)}
-        //         value={email}
-        //         type={'text'}
-        //         placeholder={'email'}
-        //     />
-        //     <input
-        //         onChange={e => setPassword(e.target.value)}
-        //         value={password}
-        //         type={'text'}
-        //         placeholder={'pwd'}
-        //     />
-        //     <button onClick={loginMe}>
-        //         Отправить
-        //     </button>
-        // </div>
     );
 };
 
