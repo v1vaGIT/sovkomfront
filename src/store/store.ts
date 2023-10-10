@@ -8,6 +8,7 @@ import { ICourse } from "../models/ICourse.ts";
 import { ICoursesListResponse } from "../models/response/CoursesListResponse.ts";
 import { CoursesService } from "../services/CoursesService.ts";
 import { lessons } from "../../fakeData/user-lessons.js";
+import { lesson } from "../../fakeData/lesson.ts";
 import { courseslist } from "../../fakeData/coursesList.js";
 import { myCourseslist } from "../../fakeData/my-courses-list.js";
 import { tabsList } from "../../fakeData/tab.js";
@@ -17,7 +18,7 @@ import { ILesson } from "../models/ILesson.ts";
 
 export default class Store {
   viewer = {} as IViewer;
-  isAuth = false;
+  isAuth = true;
   isLoading = false;
   coursesList: null | ICourse[] = null;
   coursesTabs: null | ITabs[] = null;
@@ -33,27 +34,22 @@ export default class Store {
   }
 
   setViewer(viewer: IViewer) {
-    console.log("viewer", viewer);
     this.viewer = viewer;
   }
 
   setCoursesList(courses: ICourse[]) {
-    console.log("courses", courses);
     this.coursesList = courses;
   }
 
   setCoursesTabs(tabs: ITabs[]) {
-    console.log("tabs", tabs);
     this.coursesTabs = tabs;
   }
 
   setMyCoursesList(courses: IMyCourse[]) {
-    console.log("my", courses);
     this.myCoursesList = courses;
   }
 
   setLessonsList(lessons: ILesson[]) {
-    console.log("уроки");
     this.lessonsList = lessons;
   }
 
@@ -104,7 +100,7 @@ export default class Store {
   }
 
   async fetchAllCourses() {
-    console.log("ищу курсы");
+
     this.setLoading(true);
     try {
       const response = await CoursesService.fetchAllCourses();
@@ -119,11 +115,11 @@ export default class Store {
   }
 
   async fetchCourseLessons(id: number) {
-    console.log("ищу уроки курса");
+
     this.setLoading(true);
     try {
-      const response = await CoursesService.fetchCourseLessons(id);
-      // const response = lessons;
+      // const response = await CoursesService.fetchCourseLessons(id);
+      const response = lessons;
       console.log(response);
       this.setLessonsList(response.data);
     } catch (e: any) {
@@ -133,8 +129,20 @@ export default class Store {
     }
   }
 
+  async fetchLesson(id: number) {
+    this.setLoading(true);
+    try {
+      const response = await CoursesService.fetchLesson(id);
+      // const response = lesson;
+      console.log(response);
+    } catch (e: any) {
+      console.log(e.response?.data?.message);
+    } finally {
+      this.setLoading(false);
+    }
+  }
+
   async fetchCoursesTabs() {
-    console.log("ищу табы");
     this.setLoading(true);
     try {
       const response = await CoursesService.fetchCoursesTabs();
@@ -149,11 +157,10 @@ export default class Store {
   }
 
   async fetchMyCourses() {
-    console.log("ищу мои курсы");
     this.setLoading(true);
     try {
-      const response = await CoursesService.fetchMyCourses();
-      // const response = myCourseslist;
+      // const response = await CoursesService.fetchMyCourses();
+      const response = myCourseslist;
       console.log(response);
       this.setMyCoursesList(response.data);
     } catch (e: any) {

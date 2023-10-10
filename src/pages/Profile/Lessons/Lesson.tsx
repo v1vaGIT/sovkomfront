@@ -1,21 +1,65 @@
-import React from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import s from './styles.module.css'
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {observer} from "mobx-react-lite";
+import {CoursesService} from "../../../services/CoursesService.ts";
+import {lesson1} from "../../../../fakeData/lesson.ts";
+import {ILesson} from "../../../models/ILesson.ts";
 
 const Lesson = () => {
+
+    const [lesson, setLesson] = useState(null)
+    const {id} = useParams()
+
+    useEffect(()=>{
+        async function fetchLesson(){
+            console.log('test')
+            if (id){
+                const idToNumber = parseInt(id)
+                const response = await CoursesService.fetchLesson(idToNumber);
+                // @ts-ignore
+                setLesson(response)
+            }
+        }
+        fetchLesson()
+    },[])
+
+    // @ts-ignore
     return (
         <>
             <div className={s.lesson__headerWrap}>
 
-                <Link className={s.lesson__backToCourse} to={'/profile/my-courses/12/'}>Вернуться к списку уроков</Link>
+                <Link className={s.lesson__backToCourse} to={'/profile/my-courses/'}>Вернуться к списку курсов</Link>
 
                 <div className={s.lesson__title}>
                     Управление командой
                 </div>
             </div>
             <div className={s.lessons__container}>
-                Содержание урока
+                {
+                    lesson ?
+                        // @ts-ignore
+                        lesson.data.content.map((content) => {
+                            if (content.type === "p"){
+                                return (
+                                    <div>
+                                        <p>{content.value}</p>
+                                        <br/>
+                                    </div>
+                                )
+                            }
+                            if (content.type === "b"){
+                                return (
+                                    <div>
+                                        <p><b>{content.value}</b></p>
+                                        <br/>
+                                    </div>
+                                )
+                            }
+                        })
+                        :
+                        <p>В данный урок еще не добавлен контент</p>
+                }
             </div>
         </>
     );

@@ -9,7 +9,6 @@ const CourseDetailPage = () => {
 
     const {store} = useContext(Context)
     const {id} = useParams()
-    console.log(id)
 
     useEffect(()=>{
         if (!store.lessonsList){

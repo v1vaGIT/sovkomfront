@@ -2,16 +2,21 @@ export const coursesTabs = [
     {
         id: 1,
         name: 'Все',
-        link: 'all/'
+        link: 'all'
     },
     {
         id: 2,
         name: 'Менеджерам',
-        link: 'managers/'
+        link: 'management'
     },
     {
         id: 3,
-        name: 'Программистам',
-        link: 'programmer/'
+        name: 'Операторам',
+        link: 'operators'
+    },
+    {
+        id: 3,
+        name: 'ИТ-специалистам',
+        link: 'it'
     },
 ]

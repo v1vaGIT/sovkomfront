@@ -9,7 +9,7 @@ import { Context } from '../../../main.tsx';
 
 const CoursesTabs = () => {
     const { store } = useContext(Context)
-    const sectionTabs:ITabs[] | null = store.coursesTabs //времнная заглушка, табы приходят с сервера
+    const sectionTabs:ITabs[] | null = coursesTabs //времнная заглушка, табы приходят с сервера
     const location = useLocation()
 
     useEffect(() => {

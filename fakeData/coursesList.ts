@@ -7,7 +7,7 @@ const courseslist = {
       placesLeft: 10,
       startAt: new Date("2011-10-05T14:48:00.000Z"), // ISOString
       endAt: new Date("2011-11-05T14:48:00.000Z"), // ISOString
-      tabLink: "managers",
+      tabLink: "management",
       description: "Приходи на курс! Это круто!",
       lessonsTotal: 10,
     },
@@ -15,7 +15,7 @@ const courseslist = {
       id: 14,
       title: "Знакомство с Совкомбанком",
       type: "infinite", // enum ('finite', 'infinite')
-      tabLink: "managers",
+      tabLink: "operators",
       placesLeft: 50,
       description: "Приходи на курс! Это круто!",
       lessonsTotal: 8,
@@ -27,7 +27,7 @@ const courseslist = {
       placesLeft: 10,
       startAt: new Date("2011-11-05T14:48:00.000Z"), // ISOString
       endAt: new Date("2011-12-05T14:48:00.000Z"), // ISOString
-      tabLink: "programmer",
+      tabLink: "it",
       description: "Приходи на курс! Это круто!",
       lessonsTotal: 17,
     },

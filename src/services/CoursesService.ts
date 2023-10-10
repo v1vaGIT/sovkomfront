@@ -22,6 +22,10 @@ export class CoursesService {
     return apiInstance.get(`/lessons`, { params: { courseId: id } });
   }
 
+  static async fetchLesson(id: number): Promise<AxiosResponse<ILesson>> {
+    return apiInstance.get(`lesson/${id}`)
+  }
+
   static async fetchMyCourses(): Promise<AxiosResponse<IMyCourse[]>> {
     return apiInstance.get(`${BASE_URL}/my`);
   }
