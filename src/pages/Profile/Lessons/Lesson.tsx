@@ -3,7 +3,6 @@ import s from './styles.module.css'
 import {Link, useParams} from "react-router-dom";
 import {observer} from "mobx-react-lite";
 import {CoursesService} from "../../../services/CoursesService.ts";
-import {lesson1} from "../../../../fakeData/lesson.ts";
 import {ILesson} from "../../../models/ILesson.ts";
 
 const Lesson = () => {

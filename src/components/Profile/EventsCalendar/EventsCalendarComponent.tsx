@@ -5,7 +5,6 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 
 import './style.css'
 
-import { events } from '../../../../fakeData/events.js'
 import { observer } from "mobx-react-lite";
 const EventsCalendarComponent: FC = () =>  {
   let firstDaty = 1;
