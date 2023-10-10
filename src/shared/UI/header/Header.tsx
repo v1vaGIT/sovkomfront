@@ -31,9 +31,9 @@ const Header = () => {
         <div className={s.mainHeader}>
             <div className={s.mainHeader__container}>
                 <div className={s.container__leftContent}>
-                    <a href='/' className={s.leftContent__logo}>
+                    <Link to='/' className={s.leftContent__logo}>
                         <img src={logo} alt='av'/>
-                    </a>
+                    </Link>
                     <div className={s.leftContent__search}>
                         <input className={s.search__input} placeholder='Искать учебные материалы...'></input>
                         <button className={s.search__placeholder}>

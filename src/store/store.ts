@@ -5,7 +5,6 @@ import axios from "axios";
 import { AuthResponse } from "../models/response/AuthResponse";
 import { API_URL } from "../http";
 import { ICourse } from "../models/ICourse.ts";
-import { ICoursesListResponse } from "../models/response/CoursesListResponse.ts";
 import { CoursesService } from "../services/CoursesService.ts";
 import { IMyCourse } from "../models/IMyCourse";
 import { ITabs } from "../models/ITabs";
