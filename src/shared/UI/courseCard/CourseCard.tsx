@@ -21,7 +21,7 @@ const CourseCard:FC<ICourseCard> = (
     const [buttonText, setButtonText] = useState('Разблокировать курс')
     const [isBtnDisabled, setIsBtnDisabled] = useState(false)
 
-    const singUp = async (id: number) => {
+    const signUp = async (id: number) => {
         await store.signUpOnCourse(id);
         console.log('стараюсь зарегистрировать на курс')
         if (placesLeft){
@@ -58,7 +58,7 @@ const CourseCard:FC<ICourseCard> = (
                 <Button
                     title={buttonText}
                     className={s.button}
-                    onClick={()=>{console.log('click')}}
+                    onClick={() => signUp(id)}
                     disabled={isBtnDisabled}
                 />
                 {
