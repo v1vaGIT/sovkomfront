@@ -1,0 +1,16 @@
+.fc-header-toolbar {
+    margin: 15px !important;
+}
+
+.fc-media-screen {
+    margin-top: 60px !important;
+    height: calc(100vh - 60px - 128px) !important;
+}
+
+.fc-event-title.fc-sticky {
+    color: #FFFFFF;
+}
+
+.fc-icon {
+    color: #FFFFFF;
+}
