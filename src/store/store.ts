@@ -12,7 +12,7 @@ import { ILesson } from "../models/ILesson.ts";
 
 export default class Store {
   viewer = {} as IViewer;
-  isAuth = true;
+  isAuth = false;
   isLoading = false;
   coursesList: null | ICourse[] = null;
   coursesTabs: null | ITabs[] = null;
@@ -112,8 +112,8 @@ export default class Store {
 
     this.setLoading(true);
     try {
-      // const response = await CoursesService.fetchCourseLessons(id);
-      const response = lessons;
+      const response = await CoursesService.fetchCourseLessons(id);
+      // const response = lessons;
       console.log(response);
       this.setLessonsList(response.data);
     } catch (e: any) {
@@ -153,8 +153,8 @@ export default class Store {
   async fetchMyCourses() {
     this.setLoading(true);
     try {
-      // const response = await CoursesService.fetchMyCourses();
-      const response = myCourseslist;
+      const response = await CoursesService.fetchMyCourses();
+      // const response = myCourseslist;
       console.log(response);
       this.setMyCoursesList(response.data);
     } catch (e: any) {

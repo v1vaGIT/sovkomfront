@@ -15,6 +15,7 @@ const Lesson = () => {
             if (id){
                 const idToNumber = parseInt(id)
                 const response = await CoursesService.fetchLesson(idToNumber);
+                console.log('урок', response)
                 // @ts-ignore
                 setLesson(response)
             }

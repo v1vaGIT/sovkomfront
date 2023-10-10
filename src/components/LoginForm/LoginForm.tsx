@@ -27,36 +27,37 @@ const LoginForm: FC = () => {
             <div className={s.form__title}>
                 Вход в университет Совкомбанк
             </div>
-            <form className={s.form__formFieldsContainer} onSubmit={loginMe}>
+            <div className={s.form__formFieldsContainer}>
                 <div className={s.form__formField}>
-                            <Input
-                                fieldName={'Пользователь'}
-                                value={email}
-                                onChange={(e: any) => setEmail(e.target.value)}
-                                placeholder={'sovcom@mail.ru'}
-                                type={'text'}
-                            />
+                    <input
+
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        placeholder={'sovcom@mail.ru'}
+                        type={'text'}
+                    />
 
                 </div>
 
                 <div className={s.form__formField}>
-                            <Input
-                                fieldName={'Пароль'}
-                                value={password}
-                                onChange={(e: any) => setPassword(e.target.value)}
-                                placeholder={'*****'}
-                                type={'password'}
-                            />
-                </div>
-                <div className={s.submitButton_container}>
-                    <Button
-                        title={'Войти'}
-                        disabled={false}
-                        type={'submit'}
-                        className={btnStyles}
+                    <input
+
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                        placeholder={'*****'}
+                        type={'password'}
                     />
                 </div>
-            </form>
+                <div className={s.submitButton_container}>
+                    <button
+
+                        onClick={() => store.login(email, password)}
+                        disabled={false}
+
+                        className={btnStyles}
+                    >Войти </button>
+                </div>
+            </div>
         </div>
     );
 };

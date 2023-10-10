@@ -7,12 +7,12 @@ export const coursesTabs = [
     {
         id: 2,
         name: 'Менеджерам',
-        link: 'management'
+        link: "managment"
     },
     {
         id: 3,
         name: 'Операторам',
-        link: 'operators'
+        link: "operators"
     },
     {
         id: 3,

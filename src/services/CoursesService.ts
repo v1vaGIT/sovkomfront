@@ -23,7 +23,7 @@ export class CoursesService {
   }
 
   static async fetchLesson(id: number): Promise<AxiosResponse<ILesson>> {
-    return apiInstance.get(`lesson/${id}`)
+    return apiInstance.get(`lessons/${id}`)
   }
 
   static async fetchMyCourses(): Promise<AxiosResponse<IMyCourse[]>> {
