@@ -4,7 +4,6 @@ import s from './style.module.css'
 
 import logo from '../../assets/img/logo.svg'
 import avatar from '../../assets/img/avatar.svg'
-import avatarMore from '../../assets/img/avatarMore.svg'
 import {Context} from "../../../main";
 import {Link} from "react-router-dom";
 
